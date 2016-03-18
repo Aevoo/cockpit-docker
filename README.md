@@ -1,6 +1,5 @@
 # Cockpit Docker Image
-Repository for maintaining the Docker image of Cockpit. __This image is still
-not published to Dockerhub.__
+Repository for maintaining the Docker image of Cockpit. See more at [Dockerhub](https://hub.docker.com/r/aheinze/cockpit/)
 
 # Usage
 Start a container with:
