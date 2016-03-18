@@ -5,12 +5,12 @@ not published to Dockerhub.__
 # Usage
 Start a container with:
 
-    docker run -d --name cockpit -p 8080:80 cockpit
+    docker run -d --name cockpit -p 8080:80 aheinze/cockpit
 
 or with Docker compose:
 ```yml
 cockpit:
-  image: cockpit
+  image: aheinze/cockpit
   ports:
     - 8080:80
 ```
