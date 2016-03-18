@@ -1,4 +1,5 @@
 # Supported tags and respective `Dockerfile` links
+- [`next` (*Dockerfile*)](https://github.com/aheinze/cockpit-docker/blob/master/Dockerfile)
 - [`0.13.0`,  `latest` (*Dockerfile*)](https://github.com/aheinze/cockpit-docker/blob/master/Dockerfile)
 
 This repository is updated with automated builds through Travis.

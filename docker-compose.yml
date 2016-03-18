@@ -2,3 +2,8 @@ cockpit:
   image: aheinze/cockpit
   ports:
     - 8080:80
+
+next:
+  image: aheinze/cockpit:next
+  ports:
+    - 8081:80
