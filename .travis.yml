@@ -3,8 +3,5 @@ sudo: required
 services:
   - docker
 
-addons:
-  ssh_known_hosts: github.com
-
 script:
   make build push
