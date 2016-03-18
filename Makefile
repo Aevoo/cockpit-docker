@@ -12,7 +12,7 @@ checkout:
 	git submodule update --checkout
 
 login:
-	docker login --email $(DOCKERHUB_EMAIL) --username $(DOCKERHUB_USERNAME) --password $(DOCKERHUB_PASSWORD)
+	@docker login --email $(DOCKERHUB_EMAIL) --username $(DOCKERHUB_USERNAME) --password $(DOCKERHUB_PASSWORD)
 
 push: login
 	docker push $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):$(DOCKER_TAG)
