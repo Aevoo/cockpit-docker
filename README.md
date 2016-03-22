@@ -1,4 +1,9 @@
 # Cockpit Docker Image
+[![Build Status](https://travis-ci.org/aheinze/cockpit-docker.svg?branch=master)](https://travis-ci.org/aheinze/cockpit-docker)
+[![Docker Stars](https://img.shields.io/docker/stars/aheinze/cockpit.svg)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/aheinze/cockpit.svg)]()
+[![](https://img.shields.io/github/issues-raw/aheinze/cockpit-docker.svg)]()
+
 Repository for maintaining the Docker image of Cockpit. See more at [Dockerhub](https://hub.docker.com/r/aheinze/cockpit/)
 
 # Usage
