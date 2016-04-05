@@ -1,20 +1,30 @@
-mongo:
-  image: mongo
+version: "2"
+services:
+  mongo:
+    image: mongo
 
-cockpit:
-  image: aheinze/cockpit
-  environment:
-    COCKPIT_SESSION_NAME: "cockpit"
-    COCKPIT_SALT: "y283y2983y48239y"
-    COCKPIT_I18N: "en"
-    COCKPIT_DATABASE_SERVER: "mongodb://mongo:27017"
-    COCKPIT_DATABASE_NAME: "cockpit"
-  links:
-    - mongo
-  ports:
-    - 8080:80
+  master:
+    image: aheinze/cockpit
+    environment:
+      COCKPIT_SESSION_NAME: "cockpit"
+      COCKPIT_SALT: "y283y2983y48239y"
+      COCKPIT_I18N: "en"
+      COCKPIT_DATABASE_SERVER: "mongodb://mongo:27017"
+      COCKPIT_DATABASE_NAME: "cockpit_master"
+    depends_on:
+      - mongo
+    ports:
+      - 8080:80
 
-next:
-  image: aheinze/cockpit:next
-  ports:
-    - 8081:80
+  next:
+    image: aheinze/cockpit:next
+    environment:
+      COCKPIT_SESSION_NAME: "cockpit"
+      COCKPIT_SALT: "y283y2983y48239y"
+      COCKPIT_I18N: "en"
+      COCKPIT_DATABASE_SERVER: "mongodb://mongo:27017"
+      COCKPIT_DATABASE_NAME: "cockpit_next"
+    depends_on:
+      - mongo
+    ports:
+      - 8081:80
