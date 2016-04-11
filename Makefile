@@ -13,7 +13,7 @@ master: checkout
 	docker build -t $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):$(DOCKER_TAG) .
 	docker build -t $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):latest .
 
-push-master:
+push-master: login
 	docker push $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):$(DOCKER_TAG)
 	docker push $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):latest
 
@@ -21,7 +21,7 @@ next: checkout
 	cd src && git checkout next && git pull
 	docker build -t $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):next .
 
-push-next:
+push-next: login
 	docker push $(DOCKERHUB_USERNAME)/$(DOCKERHUB_REPOSITORY):next
 
 checkout:
