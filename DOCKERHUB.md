@@ -17,8 +17,41 @@ Start a cockpit instance:
 
 Follow the [setup instructions](http://getcockpit.com/docs#!getting_started/setup).
 
+## Environment Variables
+
+The Cockpit image uses non required environment variables for the database, email and others configs.
+
+### `COCKPIT_SESSION_NAME`
+The name of the cockpit session.
+
+### `COCKPIT_SALT`
+Salt for password hashing etc.
+
+### `COCKPIT_I18N`
+Default system language.
+
+### `COCKPIT_DATABASE_SERVER`, `COCKPIT_DATABASE_NAME`
+To use mongodb as main data storage.
+
+### Email
+You can configure email settings with the following variables:
+```php
+if (!empty(getenv('COCKPIT_MAILER_FROM'))){
+  $configs['mailer'] = [
+      "from"      => getenv('COCKPIT_MAILER_FROM'),
+      "transport" => getenv('COCKPIT_MAILER_TRANSPORT'),
+      "host"      => getenv('COCKPIT_MAILER_HOST'),
+      "user"      => getenv('COCKPIT_MAILER_USER'),
+      "password"  => getenv('COCKPIT_MAILER_PASSWORD'),
+      "port"      => getenv('COCKPIT_MAILER_PORT'),
+      "auth"      => getenv('COCKPIT_MAILER_AUTH'),
+      "encryption"=> getenv('COCKPIT_MAILER_ENCRYPTION')
+  ];
+}
+```
+
 # How to extend this image
-You can extend this image and add your custom **cockpit/custom/config.php**
+You can extend this image and add your custom **cockpit/custom/config.php** (in the `next` branch is config/config.php)
 
 ```
 FROM aheinze/cockpit

@@ -18,4 +18,5 @@ COPY docker-config.php /var/www/html/custom/config.php
 # Next branch configuration
 COPY docker-config.php /var/www/html/config/config.php
 COPY src /var/www/html/
-RUN chmod 777 -R storage
+RUN chmod 777 -R storage config
+VOLUME /var/www/html/storage
