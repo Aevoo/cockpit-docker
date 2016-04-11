@@ -51,7 +51,7 @@ if (!empty(getenv('COCKPIT_MAILER_FROM'))){
 ```
 
 # How to extend this image
-You can extend this image and add your custom **cockpit/custom/config.php** (in the `next` branch is config/config.php)
+You can extend this image and add your custom **cockpit/custom/config.php** (in the `next` branch is cockpit/config/config.php)
 
 ```
 FROM aheinze/cockpit
